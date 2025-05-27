@@ -1,44 +1,42 @@
-import pandas as pd
-import json
-import zipfile
 import os
+import json
+import pandas as pd
+import zipfile
 
-# Unzip the dataset if it's a zip file
-zip_filename = "yelp_academic_dataset_business.json.zip"
-json_filename = "yelp_academic_dataset_business.json"
-
-if not os.path.exists(json_filename):
-    with zipfile.ZipFile(zip_filename, 'r') as zip_ref:
+# Unzip dataset if needed
+zip_path = "yelp_academic_dataset_business.json.zip"
+json_path = "yelp_academic_dataset_business.json"
+if not os.path.exists(json_path) and os.path.exists(zip_path):
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall()
-    print(f"Unzipped {zip_filename}")
+    print(f"Unzipped {zip_path}")
 
-# Load the JSON data
+# Load data
 data = []
-with open(json_filename, 'r', encoding='utf-8') as f:
+with open(json_path, 'r', encoding='utf-8') as f:
     for line in f:
         data.append(json.loads(line))
 
-# Convert to DataFrame and filter restaurants
+# Convert to DataFrame
 df = pd.DataFrame(data)
+
+# Filter only restaurants
 df = df[df['categories'].str.contains("Restaurant", na=False)]
 
-# Helper function to extract price from attributes
+# Extract price range from attributes
 def get_price(attr):
     try:
         return int(eval(attr).get("RestaurantsPriceRange2"))
     except:
         return None
 
-# Extract fields
-df_cleaned = df[["name", "stars", "attributes", "categories", "city", "state"]].copy()
-df_cleaned["price"] = df_cleaned["attributes"].apply(get_price)
-df_cleaned["restaurant_type"] = df_cleaned["categories"].apply(
-    lambda x: x.split(",")[0] if isinstance(x, str) else None
-)
+df['price'] = df['attributes'].apply(get_price)
+df['restaurant_type'] = df['categories'].apply(lambda x: x.split(",")[0] if isinstance(x, str) else None)
 
-# Optionally keep all rows even with missing price, but keep only rows with stars
-df_cleaned = df_cleaned.dropna(subset=["stars"])
+# Only drop rows without stars (price 可以为空)
+df_cleaned = df[["name", "stars", "attributes", "categories", "city", "state", "price", "restaurant_type"]]
+df_cleaned = df_cleaned.dropna(subset=['stars'])
 
-# Save the cleaned data
+# Save cleaned data
 df_cleaned.to_csv("yelp_cleaned.csv", index=False)
 print("Saved cleaned data to yelp_cleaned.csv")
