@@ -8,6 +8,15 @@ This project analyzes Yelp business data to uncover patterns in restaurant ratin
 - Highlight the most common restaurant types
 - Visualize regional rating patterns using heatmaps
 
+## Data Source
+
+This project uses the [Yelp Open Dataset](https://www.yelp.com/dataset), provided by Yelp as part of their Academic Dataset program.
+
+The dataset primarily contains business, review, and user data from cities in the United States (e.g., Phoenix, Las Vegas, Charlotte). A few entries may also come from Canada (e.g., Toronto) or the United Kingdom (e.g., Edinburgh), but these are limited and may vary by dataset version.
+
+All data is for academic research purposes only and complies with Yelp's data sharing policy.
+
+
 ## Files in This Repository
 
 | File                                      | Description                              |
@@ -45,9 +54,6 @@ This project analyzes Yelp business data to uncover patterns in restaurant ratin
 2. Unzip datasets
 3. Run `clean_business.py` to generate the cleaned dataset.
 4. Open `analysis.ipynb` in Jupyter Notebook and run all cells.
-
-## Notes
-The dataset used is part of Yelp’s academic dataset. This analysis focuses on businesses in the food and restaurant category only.
 
 ## Environment
 - Python 3.10+
