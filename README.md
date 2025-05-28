@@ -1,9 +1,21 @@
 # Yelp Ratings Analysis
 
-> Explore restaurant ratings across U.S. cities using Yelp business data.
+This project analyzes Yelp business data to uncover patterns in restaurant ratings across different cities, price levels, and restaurant types.
 
-## Overview
-This project analyzes Yelp data to uncover patterns in restaurant ratings by city, price level, and restaurant type.
+## Project Objectives
+- Identify the top cities by average Yelp rating
+- Explore the relationship between price level and rating
+- Highlight the most common restaurant types
+- Visualize regional rating patterns using heatmaps
+
+## Files in This Repository
+| File | Description |
+|------|-------------|
+| `analysis.ipynb` | Main notebook with all visualizations |
+| `clean_business.py` | Script to preprocess Yelp data |
+| `yelp_academic_dataset_business.json.zip` | Raw dataset (compressed) |
+| `yelp_cleaned.csv.zip` | Cleaned dataset (compressed) |
+
 
 ## Visualizations
 
@@ -22,24 +34,18 @@ This project analyzes Yelp data to uncover patterns in restaurant ratings by cit
 ### 5. Average Rating by State and Price Level (Heatmap)
 ![Heatmap State Price](images/heatmap_state_price.jpg)
 
+## Tools and Libraries
+- Python (pandas, seaborn, matplotlib, numpy)
+- Jupyter Notebook
 
-## Project Objectives
-- Identify top-rated cities
-- Analyze price vs rating correlation
-- Examine restaurant type distribution
-
-## Files in This Repository
-| File | Description |
-|------|-------------|
-| `analysis.ipynb` | Main notebook with all visualizations |
-| `clean_business.py` | Script to preprocess Yelp data |
-| `yelp_academic_dataset_business.json.zip` | Raw dataset (compressed) |
-| `yelp_cleaned.csv.zip` | Cleaned dataset (compressed) |
-
-## How to Run
+## How to Use
 1. Clone the repository
 2. Unzip datasets
-3. Run `analysis.ipynb` in Jupyter or VSCode
+3. Run `clean_business.py` to generate the cleaned dataset.
+4. Open `analysis.ipynb` in Jupyter Notebook and run all cells.
+
+## Notes
+The dataset used is part of Yelp’s academic dataset. This analysis focuses on businesses in the food and restaurant category only.
 
 ## Environment
 - Python 3.10+
