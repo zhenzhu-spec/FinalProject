@@ -9,12 +9,14 @@ This project analyzes Yelp business data to uncover patterns in restaurant ratin
 - Visualize regional rating patterns using heatmaps
 
 ## Files in This Repository
-| File | Description |
-|------|-------------|
-| `analysis.ipynb` | Main notebook with all visualizations |
-| `clean_business.py` | Script to preprocess Yelp data |
-| `yelp_academic_dataset_business.json.zip` | Raw dataset (compressed) |
-| `yelp_cleaned.csv.zip` | Cleaned dataset (compressed) |
+
+| File                                      | Description                              |
+|-------------------------------------------|------------------------------------------|
+| `analysis.ipynb`                          | Main notebook with all visualizations    |
+| `clean_business.py`                       | Script to preprocess Yelp data           |
+| `yelp_academic_dataset_business.json.zip` | Raw dataset (compressed)                 |
+| `yelp_cleaned.csv.zip`                    | Cleaned dataset (compressed)             |
+| `images/`                                 | Folder containing all visualization images|
 
 
 ## Visualizations
