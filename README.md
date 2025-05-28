@@ -1,34 +1,34 @@
 # Yelp Ratings Analysis
 
-This project analyzes Yelp business data to uncover patterns in restaurant ratings across different cities, price levels, and restaurant types.
+> Explore restaurant ratings across U.S. cities using Yelp business data.
+
+## Overview
+This project analyzes Yelp data to uncover patterns in restaurant ratings by city, price level, and restaurant type.
+
+## Sample Visualizations
+
+![Top 10 Cities by Rating](images/top10_cities.png)
+![Heatmap](images/heatmap.png)
 
 ## Project Objectives
-- Identify the top cities by average Yelp rating
-- Explore the relationship between price level and rating
-- Highlight the most common restaurant types
-- Visualize regional rating patterns using heatmaps
+- Identify top-rated cities
+- Analyze price vs rating correlation
+- Examine restaurant type distribution
 
 ## Files in This Repository
 | File | Description |
 |------|-------------|
-| `analysis.ipynb` | Main Jupyter Notebook for analysis and visualizations |
-| `clean_business.py` | Script to preprocess raw Yelp business data |
-| `yelp_academic_dataset_business.json.zip` | Compressed version of the raw Yelp business dataset |
-| `yelp_cleaned.csv.zip` | Compressed version of the cleaned dataset |
+| `analysis.ipynb` | Main notebook with all visualizations |
+| `clean_business.py` | Script to preprocess Yelp data |
+| `yelp_academic_dataset_business.json.zip` | Raw dataset (compressed) |
+| `yelp_cleaned.csv.zip` | Cleaned dataset (compressed) |
 
-## Visualizations Included
-- Top 10 cities by average star rating
-- Boxplot and regression: price level vs rating
-- Most frequent restaurant types
-- Heatmap of average rating by state and price level
+## How to Run
+1. Clone the repository
+2. Unzip datasets
+3. Run `analysis.ipynb` in Jupyter or VSCode
 
-## Tools and Libraries
-- Python (pandas, seaborn, matplotlib, numpy)
-- Jupyter Notebook
+## Environment
+- Python 3.10+
+- pandas, seaborn, matplotlib, folium
 
-## How to Use
-1. Run `clean_business.py` to generate the cleaned dataset.
-2. Open `analysis.ipynb` in Jupyter Notebook and run all cells.
-
-## Notes
-The dataset used is part of Yelp’s academic dataset. This analysis focuses on businesses in the food and restaurant category only.
