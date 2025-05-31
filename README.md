@@ -21,7 +21,7 @@ All data is for academic research purposes only and complies with Yelp's data sh
 
 | File                                      | Description                              |
 |-------------------------------------------|------------------------------------------|
-| `analysis.ipynb`                          | Main notebook with all visualizations    |
+| `analysis.py`                          | Main notebook with all visualizations    |
 | `clean_business.py`                       | Script to preprocess Yelp data           |
 | `yelp_academic_dataset_business.json.zip` | Raw dataset (compressed)                 |
 | `yelp_cleaned.csv.zip`                    | Cleaned dataset (compressed)             |
